@@ -1382,7 +1382,12 @@ PRODUCT_COPY_FILES += \
     vendor/samsung/a10s/proprietary/system/media/temperature_limit_usb.spi:$(TARGET_COPY_OUT_SYSTEM)/media/temperature_limit_usb.spi \
     vendor/samsung/a10s/proprietary/system/media/water_protection_usb.spi:$(TARGET_COPY_OUT_SYSTEM)/media/water_protection_usb.spi
 
-# MediaTek OSS 64-bit vendor (sources built from android_vendor_mediatek)
-# The k65v1_64_bsp device-vendor.mk provides the sspm.img and other MT6765 64-bit artifacts
-$(call inherit-product, vendor/mediatek/libs/k65v1_64_bsp/device-vendor.mk)
+# MediaTek 64-bit vendor blobs
+PRODUCT_COPY_FILES += \
+    vendor/samsung/a10s/proprietary/vendor/lib64/mediadrm/libwvdrmengine.so:$(TARGET_COPY_OUT_VENDOR)/lib64/mediadrm/libwvdrmengine.so \
+    vendor/samsung/a10s/proprietary/vendor/lib/mediadrm/libwvdrmengine.so:$(TARGET_COPY_OUT_VENDOR)/lib/mediadrm/libwvdrmengine.so \
+    vendor/samsung/a10s/proprietary/vendor/lib64/libwvhidl.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libwvhidl.so \
+    vendor/samsung/a10s/proprietary/vendor/lib/libwvhidl.so:$(TARGET_COPY_OUT_VENDOR)/lib/libwvhidl.so \
+    vendor/samsung/a10s/proprietary/vendor/bin/hw/android.hardware.drm@1.2-service.widevine:$(TARGET_COPY_OUT_VENDOR)/bin/hw/android.hardware.drm@1.2-service.widevine \
+    vendor/samsung/a10s/proprietary/vendor/etc/init/android.hardware.drm@1.2-service.widevine.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/android.hardware.drm@1.2-service.widevine.rc
 
